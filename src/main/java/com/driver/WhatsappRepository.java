@@ -114,7 +114,7 @@ public class WhatsappRepository {
         if(!adminMap.get(group).getName().equals(approver.getName())){
             throw new Exception("Approver does not have rights");
         }
-        if(!groupUserMap.get(group).getName().equals(user.getName())){
+        if(!groupUserMap.get(group).contains(user.getName())){
             throw new Exception("User is not a participant");
         }
         adminMap.put(group,user);
