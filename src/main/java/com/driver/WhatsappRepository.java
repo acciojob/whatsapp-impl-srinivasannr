@@ -72,7 +72,7 @@ public class WhatsappRepository {
         // Return the message id.
         id++;
         Date d=new Date(2323223232L);
-        Message m=new Message(id,content,d);
+        Message m=new Message(id,content);
 
         return id;
     }
