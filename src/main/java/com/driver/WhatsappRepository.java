@@ -1,7 +1,9 @@
 package com.driver;
 
-import java.security.Timestamp;
+
 import java.util.*;
+
+
 
 import org.springframework.stereotype.Repository;
 
@@ -69,6 +71,9 @@ public class WhatsappRepository {
         // The 'i^th' created message has message id 'i'.
         // Return the message id.
         id++;
+        Date d=new Date();
+        Message m=new Message(id,content,d);
+
         return id;
     }
     HashMap<Group, List<Message>> groupMessageMap=new HashMap<>();
