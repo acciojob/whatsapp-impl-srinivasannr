@@ -71,8 +71,7 @@ public class WhatsappRepository {
         // The 'i^th' created message has message id 'i'.
         // Return the message id.
         id++;
-        Date d=new Date(2323223232L);
-        Message m=new Message(id,content);
+        Message m=new Message(id,content,new Date());
 
         return id;
     }
@@ -91,7 +90,9 @@ public class WhatsappRepository {
         }
 
         if(groupMessageMap.containsKey(group)){
-            groupMessageMap.get(group).add(message);
+            List<Message> list=groupMessageMap.get(group);
+            list.add(message);
+            groupMessageMap.put(group,list);
         }
         else {
             List<Message> m = new ArrayList<>();
