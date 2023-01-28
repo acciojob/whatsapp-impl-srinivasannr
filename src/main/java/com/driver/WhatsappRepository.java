@@ -51,15 +51,16 @@ public class WhatsappRepository {
     public Group createGroup(List<User> users){
         Group a;
         count++;
-        if(users.size()>2){
-
-            a=new Group("Group"+count,users.size());
+        if(users.size()==2){
+            a=new Group(users.get(1).getName(),users.size());
             groupUserMap.put(a,users);
-
         }
         else{
             a=new Group(users.get(1).getName(),users.size());
             groupUserMap.put(a,users);
+            a=new Group("Group"+count,users.size());
+            groupUserMap.put(a,users);
+
 
         }
 
